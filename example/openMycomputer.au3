@@ -7,5 +7,12 @@ WinWaitActive("计算机")		;定位到计算机窗口
 Sleep(500)
 Send("{tab 5}")						;发送5下tab选中C盘
 Sleep(500)
+
 ;Send("{APPSKEY}")				;点击C盘右键菜单
-Send("{ENTER}")					;按下回车
+
+;选中C盘符按下回车
+Send("{RIGHT}")
+Sleep(500)
+Send("{LEFT}")
+Sleep(500)
+Send("{ENTER}")
