@@ -77,11 +77,11 @@ key_with_sysbol($key_f1,"F3")
 func key_with_sysbol($key,$state)
 	for $i in $key
 		Sleep(1000)
-		;ctrl系列弹出框组合键
 		if $state == "^" Then
+			;ctrl系列弹出框组合键
 			Send("^{"& $i &"}")
-		;shift系列弹出框组合键
 		ElseIf $state== "!" Then
+			;shift系列弹出框组合键
 			Send("!{"& $i &"}")
 		ElseIf $state =="F1" Then
 			Send("{ $i }")
@@ -96,11 +96,11 @@ EndFunc
 ;处理没有弹出框的键盘模拟
 Func key_singal($key,$state,$capslock)
 	for $i in $key
-		;不开启大写键
 		if $capslock==0 Then
+			;不开启大写键情况下，模拟键盘输入
 			Send($state & "{"& $i &"}")
-		;开启大写键
 		Else
+			;开启大写键
 			Send("{CAPSLOCK on}")
 			Send($state & "{"& $i &"}")
 		EndIf
