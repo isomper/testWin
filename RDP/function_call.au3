@@ -1,17 +1,17 @@
 #cs----------------------------------------------------------------------------------------------------------------------
 创建日期：2016/04/07
 作者：顾亚茹
-功能说明：包含WndTitle.au3（windows IE浏览器、写字板、计算机管理、网络连接的标题菜单）、mouseright.au3（遍历windows系统右键菜单，开始菜单）
-、services.au3（查看和关闭windows服务的属性信息）
+功能说明：包含WindowTitle.au3（windows IE浏览器、写字板、计算机管理、网络连接的标题菜单）、right-hand-button.au3（遍历windows系统右键菜单，开始菜单）
+、service-swindow.au3（查看和关闭windows服务的属性信息）
 修改日期：
 修改人：
 修改内容：
 #ce-----------------------------------------------------------------------------------------------------------------------
 
 
-#include "WndTitle.au3"
-#include "mouseright.au3"
-#include  "services.au3"
+#include "WindowTitle.au3"
+#include "right-hand-button.au3"
+#include  "service-swindow.au3"
 Local $alt_key[5]=["F","A","V","W","H"]
 Local $listdown[5]=[1,5,5,4,3]
 ;ie C:\Program Files\Internet Explorer\iexplore.exe
@@ -25,4 +25,5 @@ Local $listdown[5]=[1,5,5,4,3]
 ;MscAright("C:\WINDOWS\system32\rrasmgmt.msc","路由和远程访问",0,0,0,0,4,1)
 ;clickstart("#e",2,0,5)
 ;调用clickstart和Aright
-WdnTitle("C:\WINDOWS\system32\compmgmt.msc","计算机管理",$alt_key,$listdown)
+;WdnTitle("C:\WINDOWS\system32\compmgmt.msc","计算机管理",$alt_key,$listdown)
+Msccell("C:\WINDOWS\system32\compmgmt.msc","计算机管理",0,2,1,1,5,2,2)
