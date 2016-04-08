@@ -7,15 +7,15 @@
 修改内容：
 #ce-----------------------------------------------------------------------------------------------------------------------
 #Include <Array.au3>
-Dim $dirlist,$dirarry
+Dim $dirList,$dirArry
 ;获取所有文件夹的绝对路径
-$dirlist=_FileListEx("d:\aa")
+$dirList=file_list_ex("d:\aa")
 ;拆分绝对路径放在数组里
-$dirarry=StringSplit($dirlist,"|")
+$dirArry=StringSplit($dirList,"|")
 
-for $i=1 to $dirarry[0]
+for $i=1 to $dirArry[0]
 	;打开文件夹
-	ShellExecute($dirarry[$i])
+	ShellExecute($dirArry[$i])
 	Sleep(1000)
 	;关闭文件夹
 	Send("!{f4}")
@@ -23,7 +23,7 @@ Next
 
 
 ;获取所有文件夹的绝对路径
-Func _FileListEx($sDir)
+Func file_list_ex($sDir)
 		If StringInStr(FileGetAttrib($sDir),"D")=0 Then Return SetError(1,0,"")
 		Local $oFSO = ObjCreate("Scripting.FileSystemObject")
 		Local $objDir
