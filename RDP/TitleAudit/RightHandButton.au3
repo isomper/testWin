@@ -18,7 +18,7 @@ Func start_cell($key,$nTab,$nUp,$nDown,$nArrowDown,$state)
 		click_start($key,$nTab,$nUp,$nDown)
 		second_level($nArrowDown)
 	EndIf
-	Send("!{F4}")
+	Send("^{esc}")
 EndFunc
 ;遍历右键子菜单
 Func right_cell($action,$x,$y,$nClicks,$nDown,$nArrowDown,$state)
@@ -100,14 +100,14 @@ Func click_start($key,$nTab,$nUp,$nDown)
 	Send("{TAB "& $nTab &"}")
 	Sleep(500)
 	Send("{UP  "& $nUp &"}")
-	Send("{APPSKEY}")
+	;Send("{APPSKEY}")
 	Sleep(500)
-	For $i =1 to $nDown
-		Send("{DOWN}")
-		Sleep(500)
-	Next
+	;For $i =1 to $nDown
+		;Send("{DOWN}")
+		;Sleep(500)
+	;Next
 	;Send($key)
-	Sleep(500)
+	;Sleep(500)
 EndFunc
 ;遍历一级菜单及其右键内容
 Func click_start_all($key,$nTab,$nUp,$nDown)
