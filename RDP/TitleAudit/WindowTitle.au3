@@ -11,7 +11,7 @@
 ;模拟遍历windows IE浏览器、写字板、计算机管理、网络连接的标题菜单
 parameters:
 $path: 执行文件的路径                                       $title：窗口的标题
-$nUp： 打开窗口标题的快捷键                                  $nDown：按下down键的次数
+$key： 打开窗口标题的快捷键                                  $nDown：按下down键的次数
 #ce-----------------------------------------------------------------------------------------------------------------------
 Func window_title($path,$title,$key,$nDown)
 	ShellExecute($path)
