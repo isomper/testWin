@@ -26,3 +26,8 @@ window_title("C:\Program Files\Internet Explorer\iexplore.exe","没有启用 Int
 Local $alt_key[6]=["F","E","V","I","O","H"]
 Local $listdown[6]=[12,12,4,1,3,1]
 window_title("C:\Program Files\Windows NT\Accessories\wordpad.exe","文档 - 写字板",$alt_key,$listdown)
+
+;网络连接窗口标题
+Local $alt_key[7]=["F","E","V","A","T","N","H"]
+Local $listdown[7]=[9,8,11,4,3,5,2]
+window_title("C:\WINDOWS\system32\ncpa.cpl","网络连接",$alt_key,$listdown)
