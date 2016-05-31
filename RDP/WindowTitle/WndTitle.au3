@@ -21,46 +21,50 @@ window_title("C:\WINDOWS\system32\compmgmt.msc","计算机管理",$alt_key_mgt,$
 ;ie窗口标题
 Local $alt_key_ie[6]=["F","E","V","A","T","H"]
 Local $listdown_ie[6] = [12,4,9,4,5,5]
-Local $arr[10][3]
+Local $arr[11][3]
 $arr[0][0] = "F"
-$arr[0][1] = 0
+$arr[0][1] = "0"
 $arr[0][2] = 5
 
 $arr[1][0] = "F"
-$arr[1][1] = 8
+$arr[1][1] = "8"
 $arr[1][2] = 3
 
 $arr[2][0] = "V"
-$arr[2][1] = 0
+$arr[2][1] = "0"
 $arr[2][2] = 5
 
 $arr[3][0] = "V"
-$arr[3][1] = 2
+$arr[3][1] = "2"
 $arr[3][2] = 5
 
 $arr[4][0] = "V"
-$arr[4][1] = 3
+$arr[4][1] = "3"
 $arr[4][2] = 4
 
 $arr[5][0] = "V"
-$arr[5][1] = 6
+$arr[5][1] = "6"
 $arr[5][2] = 5
 
 $arr[6][0] = "V"
-$arr[6][1] = 7
+$arr[6][1] = "7"
 $arr[6][2] = 5
 
-$arr[7][0] = "A"
-$arr[7][1] = 2
-$arr[7][2] = 4
+$arr[7][0] = "V"
+$arr[7][1] = "74"
+$arr[7][2] = 32
 
-$arr[8][0] = "T"
-$arr[8][1] = 0
-$arr[8][2] = 5
+$arr[8][0] = "A"
+$arr[8][1] = "2"
+$arr[8][2] = 4
 
 $arr[9][0] = "T"
-$arr[9][1] = 1
-$arr[9][2] = 2
+$arr[9][1] = "0"
+$arr[9][2] = 5
+
+$arr[10][0] = "T"
+$arr[10][1] = "1"
+$arr[10][2] = 2
 window_title("C:\Program Files\Internet Explorer\iexplore.exe","没有启用 Internet Explorer 增强的安全配置 - Microsoft Internet Explorer",$alt_key_ie,$listdown_ie)
 
 ;记事本窗口标题
