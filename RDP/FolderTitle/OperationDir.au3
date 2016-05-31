@@ -7,7 +7,7 @@
 修改内容：
 #ce-----------------------------------------------------------------------------------------------------------------------
 #Include <Array.au3>
-#Include <OperationDir.au3>
+#Include "C:\Documents and Settings\Administrator\桌面\RDP\TitleAudit\OperationDir.au3"
 
 ;遍历2000形近字文件夹
 Dim $dirList,$dirArry

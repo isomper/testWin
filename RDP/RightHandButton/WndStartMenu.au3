@@ -7,15 +7,9 @@
 修改内容：
 #ce-----------------------------------------------------------------------------------------------------------------------
 
-
-#include "WindowTitle.au3"
-#include "RightHandButton.au3"
-#include  "ServiceWindow.au3"
-
-
+#include "C:\Documents and Settings\Administrator\桌面\RDP\TitleAudit\RightHandButton.au3"
 
 ;遍历一级菜单及其右键内容，和遍历二级菜单
-
 Local $listdown[20]=[1,1,1,1,1,1,2,2,2,2,9,10,13,1,1,1,1,12,12,1]
 Local $subItem[8][2]
 $subItem[0][0] = "8"

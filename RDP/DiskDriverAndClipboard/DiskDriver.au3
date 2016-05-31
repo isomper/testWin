@@ -10,15 +10,16 @@
 #include<Word.au3>
 #include<Excel.au3>
 #include<file.au3>
-#include <DiskDriverAndClipboard.au3>
+#include "C:\Documents and Settings\Administrator\桌面\RDP\TitleAudit\DiskDriverAndClipboard.au3"
+
 ;模拟在桌面新建文件夹操作
-;create_note(@DesktopDir & "\ss.txt")
+create_note(@DesktopDir & "\ss.txt")
 
 ;模拟新建文件夹操作
-;create_folder("C:\Documents and Settings\Administrator\桌面\a")
+create_folder("C:\Documents and Settings\Administrator\桌面\a")
 
 ;模拟操作文件复制和剪切的过程
-;move_file("C:\Documents and Settings\Administrator\桌面\a","C:\Documents and Settings\Administrator\桌面\2\a","C:\Documents and Settings\Administrator\桌面\3\a")
+move_file("C:\Documents and Settings\Administrator\桌面\a","C:\Documents and Settings\Administrator\桌面\2\a","C:\Documents and Settings\Administrator\桌面\3\a")
 
 
 

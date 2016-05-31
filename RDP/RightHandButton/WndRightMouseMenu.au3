@@ -8,9 +8,10 @@
 #ce-----------------------------------------------------------------------------------------------------------------------
 
 
-#include "WindowTitle.au3"
-#include "RightHandButton.au3"
-#include  "ServiceWindow.au3"
+
+#include "C:\Documents and Settings\Administrator\桌面\RDP\TitleAudit\RightHandButton.au3"
+
+
 
 ;模拟点击鼠标右键
 
