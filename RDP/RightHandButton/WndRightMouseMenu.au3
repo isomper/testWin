@@ -12,9 +12,7 @@
 #include "C:\Documents and Settings\Administrator\桌面\RDP\TitleAudit\RightHandButton.au3"
 
 
-
 ;模拟点击鼠标右键
-
 Local $subItem[2][2]
 $subItem[0][0] = "1"
 $subItem[0][1] = 7

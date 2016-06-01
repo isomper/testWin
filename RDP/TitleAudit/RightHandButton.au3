@@ -6,54 +6,15 @@
 修改人：
 修改内容：
 #ce-----------------------------------------------------------------------------------------------------------------------
-
-;点击开始菜单并遍历二级菜单
-
-Func start_cell($key,$nTab,$nUp,$nDown,$nArrowDown,$state)
-	If $state == 1 Then
-		click_start_all($key,$nTab,$nUp,$nDown)
-	ElseIf $state == 2 Then
-		click_start($key,$nTab,$nUp,$nDown)
-	ElseIf $state == 3 Then
-		click_start($key,$nTab,$nUp,$nDown)
-		second_level($nArrowDown)
-	EndIf
-	Send("^{esc}")
-EndFunc
-;遍历右键子菜单
-Func right_cell($action,$x,$y,$nClicks,$nDown,$nArrowDown,$state)
-	If $state == 1 Then
-		mouse_right($action,$x,$y,$nClicks,$nDown)
-	ElseIf $state == 2 Then
-		mouse_right($action,$x,$y,$nClicks,$nDown)
-		second_level($nArrowDown)
-	EndIf
-	Send("{ESC}")
-EndFunc
-;遍历msc程序右键菜单的子菜单
-Func msc_cell($path,$title,$nTab,$nDown,$nRight,$n2ndDown,$nAppDown,$nArrowDown,$state)
-	if $state == 1 Then
-		msc($path,$title,$nTab,$nDown,$nRight,$n2ndDown,$nAppDown)
-	ElseIf $state==2 Then
-		msc($path,$title,$nTab,$nDown,$nRight,$n2ndDown,$nAppDown)
-		second_level($nArrowDown)
-	EndIf
-	Send("!{F4}")
-EndFunc
 #cs-----------------------------------------------------------------------------------------------------------------------
 ;.MSC方式打开模块，遍历右键菜单
 parameters:
 $path:  执行文件的路径               $title：窗口的标题           $nTab:按下tab键的次数            $nDown：按下down键的次数
 $nRight：按下right键的次数           $n2ndDown: 按下二级菜单down的个数        $nAppDown：appskey右键菜单功能键个数
 #ce-----------------------------------------------------------------------------------------------------------------------
-
-Func msc($path,$title,$nTab,$nDown,$nRight,$n2ndDown,$nAppDown)
+Func msc_appskey($path,$title,$nDown,$nRight,$n2ndDown,$nAppDown)
 	ShellExecute($path)
-	WinWaitActive($title)
-	For $i = 1 To $nTab
-		Send("{TAB}")
-		Sleep(500)
-	Next
+	Local $nWnd =WinWaitActive($title)
 	For $j = 1 To $nDown
 		Send("{DOWN}")
 		Sleep(500)
@@ -70,12 +31,47 @@ Func msc($path,$title,$nTab,$nDown,$nRight,$n2ndDown,$nAppDown)
 	Send("{APPSKEY}")
 	For $c = 1 To $nAppDown
 		Send("{DOWN}")
+		find_children($subItem, String($c))
 		Sleep(500)
 	Next
+	Send("{esc}")
 	Sleep(500)
+	WinClose($nWnd)
+EndFunc
+;遍历计算机管理（磁盘碎片整理程序以上内容）
+Func msc_system_mgt($path,$title,$nDown)
+	ShellExecute($path)
+	Local $nWnd=WinWaitActive($title)
+	For $i =0 to UBound($nDown)-1
+		For $j=0 to $nDown[$i]-1
+			Send("{DOWN}")
+			Sleep(500)
+		Next
+		Send("{RIGHT}")
+	Sleep(500)
+	Next
+	WinClose($nWnd)
+EndFunc
+;遍历计算机管理（磁盘碎片整理程序以下内容）
+Func service($path,$title,$nDown)
+	ShellExecute($path)
+	Local $nWnd=WinWaitActive($title)
+	Send("{DOWN 7}")
+	Sleep(500)
+	Send("{LEFT}")
+	Sleep(500)
+	For $i =0 to UBound($nDown)-1
+		For $j=0 to $nDown[$i]-1
+			Send("{DOWN}")
+			Sleep(2000)
+		Next
+		Send("{RIGHT}")
+	Sleep(2000)
+	Next
+	WinClose($nWnd)
 EndFunc
 
-#cs-----------------------------------------------------------------------------------------------------------------------
+#cs--------------------------------------------------------------------------------------------------------------------
 ;模拟点击鼠标右键
 parameters:
 $action:  点击鼠标（左键或者右键）        $x：当前位置横坐标                              $y:当前位置竖坐标
@@ -95,22 +91,7 @@ parameters:
 $key:  呼起应用的快捷键                                     $nTab：按下tab键的次数
 $nUp： 按下up键的次数                                       $nDown：按下down键的次数
 #ce-----------------------------------------------------------------------------------------------------------------------
-Func click_start($key,$nTab,$nUp,$nDown)
-	Send($key)
-	Sleep(500)
-	Send("{TAB "& $nTab &"}")
-	Sleep(500)
-	Send("{UP  "& $nUp &"}")
-	;Send("{APPSKEY}")
-	Sleep(500)
-	;For $i =1 to $nDown
-		;Send("{DOWN}")
-		;Sleep(500)
-	;Next
-	;Send($key)
-	;Sleep(500)
-EndFunc
-;遍历一级菜单及其右键内容
+;遍历菜单子菜单及其右键内容
 Func click_start_all($key,$nTab,$nUp,$nDown)
 	Send($key)
 	Sleep(500)
@@ -149,23 +130,5 @@ Func find_children($subList, $indexStr)
 			Sleep(500)
 		EndIf
 	Next
-EndFunc
-#cs-----------------------------------------------------------------------------------------------------------------------
-;遍历二级菜单
-parameters:
-$narrowDown: 二级菜单的数目
-#ce-----------------------------------------------------------------------------------------------------------------------
-Func second_level($arr,$nUp,$nArrowDown,$index)
-	;Send("{RIGHT}")
-	For $i=0 to  $nUp-1
-		If $index = $arr[$i][0] Then
-			Send("{RIGHT}")
-			For $i =1 to  $arr[$i][1]
-				Send("{DOWN}")
-				Sleep(500)
-			Next
-		EndIf
-	Next
-	Send("{LEFT}")
 EndFunc
 

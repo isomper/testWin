@@ -47,7 +47,7 @@ Func create_excel($fileDir)
 	_Excel_BookSaveAs  ($oexcel,$fileDir,$xlWorkbookDefault , True)
 	_Excel_Close($excelProcess)
 EndFunc
-create_note(@DesktopDir & "\ss.txt")
+;create_note(@DesktopDir & "\ss.txt")
 #cs-----------------------------------------------------------------------------------------------------------------------
 ;创建txt文件
 parameters:
