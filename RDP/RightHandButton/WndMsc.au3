@@ -31,10 +31,7 @@ $subItem[0][1] = 1
 msc_appskey("C:\WINDOWS\system32\compmgmt.msc","计算机管理",0,0,0,6)
 
 
-;遍历计算机管理菜单（存储功能以上）
-Local $listdown[7] = [2,8,3,6,2,4,3]
-msc_system_mgt("C:\WINDOWS\system32\compmgmt.msc","计算机管理",$listdown)
-;遍历计算机管理菜单（存储功能以下）
-Local $listdown[4]=[1,11,3,4]
-service("C:\WINDOWS\system32\compmgmt.msc","计算机管理",$listdown)
+;遍历计算机管理菜单
+Local $listdown[13] = [2,8,3,6,2,4,3,3,11,3,3,3,4]
+msc_system_mgt("C:\WINDOWS\system32\compmgmt.msc","计算机管理",$listdown,6)
 
