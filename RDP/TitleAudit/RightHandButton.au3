@@ -39,11 +39,17 @@ Func msc_appskey($path,$title,$nDown,$nRight,$n2ndDown,$nAppDown)
 	WinClose($nWnd)
 EndFunc
 ;遍历计算机管理（磁盘碎片整理程序以上内容）
-Func msc_system_mgt($path,$title,$nDown)
+Func msc_system_mgt($path,$title,$nDown,$nAppDown)
 	ShellExecute($path)
 	Local $nWnd=WinWaitActive($title)
 	For $i =0 to UBound($nDown)-1
 		For $j=0 to $nDown[$i]-1
+			Send("{APPSKEY}")
+			For $c = 1 To $nAppDown
+			Send("{DOWN}")
+			find_children($subItem, String($c))
+			Sleep(500)
+	Next
 			Send("{DOWN}")
 			Sleep(500)
 		Next
@@ -51,6 +57,10 @@ Func msc_system_mgt($path,$title,$nDown)
 	Sleep(500)
 	Next
 	WinClose($nWnd)
+EndFunc
+Func find_child($list,$index,$appnDown)
+	Send("{APPSKEY}")
+	For $i = 0 To $appnDown[i]-1
 EndFunc
 ;遍历计算机管理（磁盘碎片整理程序以下内容）
 Func service($path,$title,$nDown)
@@ -66,7 +76,7 @@ Func service($path,$title,$nDown)
 			Sleep(2000)
 		Next
 		Send("{RIGHT}")
-	Sleep(2000)
+	Sleep(1000)
 	Next
 	WinClose($nWnd)
 EndFunc

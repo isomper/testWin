@@ -1,15 +1,25 @@
+#include <Constants.au3>
 #cs----------------------------------------------------------------------------------------------------------------------
-åˆ›å»ºæ—¥æœŸï¼š2016/05/25
-ä½œè€…ï¼šé¡¾äºšèŒ¹
-åŠŸèƒ½è¯´æ˜ï¼šæœ¬åœ°æ–‡ä»¶ï¼ˆwordã€excelã€txtï¼‰ä¸è¿œç¨‹æ–‡ä»¶ï¼ˆwordã€excelã€txtï¼‰æ–‡ä»¶ä¹‹é—´ç›¸äº’å¤åˆ¶ã€ç²˜è´´ã€å‰ªåˆ‡æ“ä½œ
-ä¿®æ”¹æ—¥æœŸï¼š
-ä¿®æ”¹äººï¼š
-ä¿®æ”¹å†…å®¹ï¼š
+´´½¨ÈÕÆÚ£º2016/05/25
+×÷Õß£º¹ËÑÇÈã
+¹¦ÄÜËµÃ÷£º±¾µØÎÄ¼ş£¨word¡¢excel¡¢txt£©ÓëÔ¶³ÌÎÄ¼ş£¨word¡¢excel¡¢txt£©ÎÄ¼şÖ®¼äÏà»¥¸´ÖÆ¡¢Õ³Ìù¡¢¼ôÇĞ²Ù×÷
+ĞŞ¸ÄÈÕÆÚ£º
+ĞŞ¸ÄÈË£º
+ĞŞ¸ÄÄÚÈİ£º
 #ce-----------------------------------------------------------------------------------------------------------------------
 
 #include <Constants.au3>
-#include"C:\Documents and Settings\Administrator\æ¡Œé¢\RDP\TitleAudit\ClipBoard.au3"
+#include "C:\Users\zzf\Desktop\RDP\TitleAudit\Clipboard.au3"
 
-;æ¨¡æ‹Ÿå‰ªåˆ‡æ¿ä¸Šè¡Œï¼ˆå¤åˆ¶ç²˜è´´ï¼‰æ–‡å­—æ“ä½œ
-;clip_board("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\txt.sikuli","wenzi.txt - è®°äº‹æœ¬",3,@DesktopDir & "\wenben.txt","wenben.txt - è®°äº‹æœ¬",4,0)
 
+;Ä£ÄâÏÂĞĞÎÄ±¾ÓëwordÎÄ×Ö¸´ÖÆÕ³Ìù²Ù×÷
+;clip_board("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\txt.sikuli","wenzi.txt - ¼ÇÊÂ±¾",3,@DesktopDir & "\a.docx","a.docx - Word",2,0)
+
+;Ä£ÄâÏÂĞĞÎÄ±¾ÓëÎÄ±¾ÎÄ×Ö¸´ÖÆÕ³Ìù²Ù×÷
+;clip_board("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\txt.sikuli","wenzi.txt - ¼ÇÊÂ±¾",3,@DesktopDir & "\wenben.txt","wenben.txt - ¼ÇÊÂ±¾",4,0)
+
+;Ä£ÄâÏÂĞĞÎÄ±¾ÓëexcelÎÄ×Ö¸´ÖÆÕ³Ìù²Ù×÷
+;clip_board("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\txt.sikuli","wenzi.txt - ¼ÇÊÂ±¾",3,@DesktopDir & "\abc.xlsx","abc.xlsx - excel",2,0)
+
+;Ä£ÄâÏÂĞĞwordÓëexcelÍ¼Æ¬¸´ÖÆÕ³Ìù²Ù×÷
+;clip_board("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\tupian.sikuli","wen.docx - Word",1,@DesktopDir & "\abc.xlsx","abc.xlsx - Excel",2,0)

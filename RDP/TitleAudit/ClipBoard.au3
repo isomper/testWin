@@ -13,6 +13,7 @@
 ;clip_board("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\txt.sikuli","wenzi.txt - 记事本",3,@DesktopDir & "\wenben.txt","wenben.txt - 记事本",4,0)
 ;粘贴图片
 ;up("C:\Users\guyaru.pc\Desktop\runsikulix -r C:\Users\guyaru.pc\Desktop\Call_up_remote_TXT.sikuli","测试.txt - 记事本",3,@DesktopDir & "\test1.docx","test1.docx - Word",2)
+
 func clip_board($scmd,$stitle,$cCount,$dfile,$dtitle,$pCount,$state)
 	If $state == 0 Then
 		open_remote($scmd,$stitle,$cCount)

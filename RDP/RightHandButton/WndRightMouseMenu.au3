@@ -16,7 +16,7 @@
 Local $subItem[2][2]
 $subItem[0][0] = "1"
 $subItem[0][1] = 7
-$subItem[1][0] = "6"
+$subItem[1][0] = "7"
 $subItem[1][1] = 15
-mouse_right("right",350,743,1,7)
+mouse_right("right",350,743,1,8)
 Send("{ESC}")

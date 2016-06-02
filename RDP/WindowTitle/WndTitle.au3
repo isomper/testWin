@@ -8,7 +8,7 @@
 #ce-----------------------------------------------------------------------------------------------------------------------
 
 
-#include "C:\Documents and Settings\Administrator\桌面\05_25TitleAudit\WindowTitle.au3"
+#include "C:\Documents and Settings\Administrator\桌面\RDP\TitleAudit\WindowTitle.au3"
 
 ;计算机管理窗口标题
 Local $alt_key_mgt[5]=["F","A","V","W","H"]
@@ -18,6 +18,8 @@ $arr[0][0] = "A"
 $arr[0][1] = 1
 $arr[0][2] = 2
 window_title("C:\WINDOWS\system32\compmgmt.msc","计算机管理",$alt_key_mgt,$listdown_mgt)
+
+
 ;ie窗口标题
 Local $alt_key_ie[6]=["F","E","V","A","T","H"]
 Local $listdown_ie[6] = [12,4,9,4,5,5]
@@ -36,7 +38,7 @@ $arr[2][2] = 5
 
 $arr[3][0] = "V"
 $arr[3][1] = "2"
-$arr[3][2] = 5
+$arr[3][2] = 7
 
 $arr[4][0] = "V"
 $arr[4][1] = "3"
