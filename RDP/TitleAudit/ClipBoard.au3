@@ -9,54 +9,112 @@
 #ce-----------------------------------------------------------------------------------------------------------------------
 
 
+
 ;粘贴文字
 ;clip_board("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\txt.sikuli","wenzi.txt - 记事本",3,@DesktopDir & "\wenben.txt","wenben.txt - 记事本",4,0)
-;粘贴图片
-;up("C:\Users\guyaru.pc\Desktop\runsikulix -r C:\Users\guyaru.pc\Desktop\Call_up_remote_TXT.sikuli","测试.txt - 记事本",3,@DesktopDir & "\test1.docx","test1.docx - Word",2)
 
-func clip_board($scmd,$stitle,$cCount,$dfile,$dtitle,$pCount,$state)
+;clip_board("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\remoatopentxt.sikuli","a.doc - Word",3,@DesktopDir & "\新建 文本文档 (4).txt","新建 文本文档 (4).txt - 记事本",4,0)
+
+
+Func clip_board_down($scmd,$dfile,$dtitle,$pCount,$state)
 	If $state == 0 Then
-		open_remote($scmd,$stitle,$cCount)
+		open_remote($scmd)
+		Sleep(9000)
+		open_excel($dfile,$dtitle,$pCount)
+	ElseIf $state == 1 Then
+		open_remote($scmd)
+		Sleep(9000)
 		open_local($dfile,$dtitle,$pCount)
+	ElseIf $state == 2 Then
+		open_remote($scmd)
+		Sleep(15000)
+		open_tupian($dfile,$dtitle,$pCount)
+	EndIf
+EndFunc
+
+Func clip_board_up($dfile,$dtitle,$pCount,$scmd,$state)
+	If $state == 0 Then
+		open_excel($dfile,$dtitle,$pCount)
+		open_remote($scmd)
 	ElseIf $state == 1 Then
 		open_local($dfile,$dtitle,$pCount)
-		open_remote($scmd,$stitle,$cCount)
+		open_remote($scmd)
 	EndIf
 EndFunc
 #cs-----------------------------------------------------------------------------------------------------------------------
 ;打开远程文件，复制内容到剪切板
 parameters:
-$scmd:打开远程文件命令                      $stitle:远程文件标题                       $cCount:按下几下down键到复制按钮
+$scmd:打开远程文件命令
 #ce-----------------------------------------------------------------------------------------------------------------------
-Func open_remote($scmd,$stitle,$cCount)
+Func open_remote($scmd)
 	Run(@ComSpec & " /c " & $scmd,"", @SW_HIDE,"")
-	Local $sPid = WinWaitActive("测试.txt - 记事本","",10)
-	;ControlFocus($sPid,"","Edit1");使焦点落在编辑框上
-	Send("+{right 20}")
-	Sleep(1000)
-	Send("{APPSKEY}")
-	Sleep(1000)
-	Send("{DOWN " & $cCount & "}")
-	Sleep(500)
-	Send("{ENTER}")
-	Sleep(500)
-	;$text = ClipGet()
-	;ConsoleWrite($text& "111111111111" & @CRLF)
 EndFunc
+
 #cs-----------------------------------------------------------------------------------------------------------------------
 ;粘贴剪切板内容到本地文件
 parameters:
 $dfile: 本地文件文件                         $dtitle:本地文件标题                        $pCount:按下几下down键到粘贴按钮
 #ce-----------------------------------------------------------------------------------------------------------------------
+
 Func open_local($dfile,$dtitle,$pCount)
 	ShellExecute($dfile)
-	WinWaitActive($dtitle,"",10)
-	Sleep(1000)
+	Local $spid = WinWaitActive($dtitle,"",10)
 	Send("{ENTER}")
-	Sleep(1000)
+	Sleep(500)
+	Send("+{right 40}")
+	Sleep(500)
 	Send("{APPSKEY}")
-	Sleep(1000)
-	Send("{DOWN " & $pCount & "}")
+	Sleep(500)
+	For $i = 0 To $pCount-1
+		Send("{DOWN}")
+		Sleep(500)
+	Next
 	Send("{ENTER}")
+	Sleep(500)
+	WinClose($spid)
+	Send("{TAB}")
+	Sleep(500)
+	Send("{enter}")
 EndFunc
+
+Func open_tupian($dfile,$dtitle,$pCount)
+	ShellExecute($dfile)
+	Local $spid = WinWaitActive($dtitle,"",10)
+	Send("{ENTER}")
+	Sleep(500)
+	Send("+{right 40}")
+	Sleep(500)
+	Send("{APPSKEY}")
+	Sleep(500)
+	For $i = 0 To $pCount-1
+		Send("{DOWN}")
+		Sleep(500)
+	Next
+	Send("{ENTER}")
+	Sleep(15000)
+	WinClose($spid)
+	Send("{TAB}")
+	Sleep(500)
+	Send("{enter}")
+EndFunc
+
+Func open_excel($dfile,$dtitle,$pCount)
+	ShellExecute($dfile)
+	Local $spid = WinWaitActive($dtitle,"",10)
+	Send("{ENTER}")
+	Sleep(2000)
+	Send("+{right}")
+	Sleep(2000)
+	Sleep(2000)
+	Send("{APPSKEY}")
+	Sleep(2000)
+	For $i = 0 To $pCount-1
+		Send("{DOWN}")
+		Sleep(500)
+	Next
+	Send("{ENTER}")
+	Sleep(1000)
+	WinClose($spid)
+EndFunc
+
 
