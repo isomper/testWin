@@ -11,15 +11,35 @@
 #include <Constants.au3>
 #include "C:\Users\zzf\Desktop\RDP\TitleAudit\Clipboard.au3"
 
+;word复制粘贴到文本txt,(从本地到远程服务器)
+clip_board_up(@DesktopDir & "\a.docx","a.docx - Microsoft Word",1,"C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\Ptxt.sikuli",1)
+Sleep(10000)
 
-;模拟下行文本与word文字复制粘贴操作
-;clip_board("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\txt.sikuli","wenzi.txt - 记事本",3,@DesktopDir & "\a.docx","a.docx - Word",2,0)
+;word复制粘贴到word,(从本地到远程服务器)
+clip_board_up(@DesktopDir & "\a.docx","a.docx - Microsoft Word",1,"C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\Pword.sikuli",1)
+Sleep(10000)
 
-;模拟下行文本与文本文字复制粘贴操作
-;clip_board("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\txt.sikuli","wenzi.txt - 记事本",3,@DesktopDir & "\wenben.txt","wenben.txt - 记事本",4,0)
+;word复制粘贴到excel,(从本地到远程服务器)
+clip_board_up(@DesktopDir & "\a.docx","a.docx - Microsoft Word",1,"C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\paste111.sikuli",1)
+Sleep(10000)
 
-;模拟下行文本与excel文字复制粘贴操作
-;clip_board("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\txt.sikuli","wenzi.txt - 记事本",3,@DesktopDir & "\abc.xlsx","abc.xlsx - excel",2,0)
+;excel复制粘贴到excel,(从本地到远程服务器)
+clip_board_up(@DesktopDir & "\abc.xlsx","Microsoft Excel - abc.xlsx",1,"C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\paste111.sikuli",0)
+Sleep(10000)
 
-;模拟下行word与excel图片复制粘贴操作
-;clip_board("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\tupian.sikuli","wen.docx - Word",1,@DesktopDir & "\abc.xlsx","abc.xlsx - Excel",2,0)
+;txt复制粘贴到txt,(从本地到远程服务器)
+clip_board_up(@DesktopDir & "\wenben.txt","wenben.txt - 记事本",3,"C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\Ptxt.sikuli",1)
+Sleep(10000)
+
+
+;txt复制粘贴到txt,(从远程服务器到本地)
+clip_board_down("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\Ctxt.sikuli",@DesktopDir & "\wenben.txt","wenben.txt - 记事本",4,1)
+
+;word复制粘贴到word,(从远程服务器到本地)
+clip_board_down("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\Cword.sikuli",@DesktopDir & "\a.docx","a.docx - Microsoft Word",2,1)
+
+;word复制粘贴到txt,(从远程服务器到本地)
+clip_board_down("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\Cword.sikuli",@DesktopDir & "\wenben.txt","wenben.txt - 记事本",4,1)
+
+;word复制图片到word（从远程到本地）
+clip_board_down("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\remotetupian.sikuli",@DesktopDir & "\tupian11.docx","tupian11.docx - Microsoft Word",2,2)
