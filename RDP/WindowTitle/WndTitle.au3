@@ -102,34 +102,38 @@ window_title("C:\WINDOWS\system32\ncpa.cpl","网络连接",$alt_key_network,$lis
 
 ;我的文档窗口标题
 Local $alt_key[6]=["F","E","V","A","T","H"]
-Local $listdown[6]=[6,6,11,4,3,2]
-Local $arr[7][3]
+Local $listdown[6]=[7,6,11,4,3,2]
+Local $arr[8][3]
 $arr[0][0] = "F"
-$arr[0][1] = 0
-$arr[0][2] = 16
+$arr[0][1] = "0"
+$arr[0][2] = 2
 
 $arr[1][0] = "F"
-$arr[1][1] = 5
-$arr[1][2] = 7
+$arr[1][1] = "1"
+$arr[1][2] = 19
 
-$arr[2][0] = "V"
-$arr[2][1] = 0
-$arr[2][2] = 5
+$arr[2][0] = "F"
+$arr[2][1] = "6"
+$arr[2][2] = 8
 
 $arr[3][0] = "V"
-$arr[3][1] = 2
+$arr[3][1] = 0
 $arr[3][2] = 5
 
 $arr[4][0] = "V"
-$arr[4][1] = 8
+$arr[4][1] = "2"
 $arr[4][2] = 8
 
 $arr[5][0] = "V"
-$arr[5][1] = 10
-$arr[5][2] = 5
+$arr[5][1] = 8
+$arr[5][2] = 8
 
-$arr[6][0] = "A"
-$arr[6][1] = 2
-$arr[6][2] = 4
+$arr[6][0] = "V"
+$arr[6][1] = "10"
+$arr[6][2] = 5
+
+$arr[7][0] = "A"
+$arr[7][1] = "2"
+$arr[7][2] = 4
 
 window_title("C:\windows\explorer.exe","我的文档",$alt_key,$listdown)
