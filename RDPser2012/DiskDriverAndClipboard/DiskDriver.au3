@@ -10,23 +10,26 @@
 #include<Word.au3>
 #include<Excel.au3>
 #include<file.au3>
-#include "C:\Documents and Settings\Administrator\桌面\RDP\TitleAudit\DiskDriver.au3"
+#include "C:\Users\Administrator\Desktop\RDPser2012\TitleAudit\DiskDriver.au3"
 
-;模拟在桌面新建文本文档操作
-create_note(@DesktopDir & "\ss.txt")
 
-;模拟新建文件夹操作
-create_folder("C:\Documents and Settings\Administrator\桌面\a")
+;新建文件夹
+create_folder("D:\disk_driver")
+
+;新建文本文档
+create_file("D:\disk_driver\xinjian.txt","C:\Windows\System32\notepad.exe","无标题 - 记事本","Button1")
+
 
 ;模拟创建word文件操作
-create_word("C:\Documents and Settings\Administrator\桌面\test.docx")
+;create_word("D:\disk_driver\xinjian.docx")
+create_file("D:\disk_driver\xinjian.docx","C:\Program Files (x86)\Microsoft Office\Office12\WINWORD.EXE","文档 1 - Microsoft Word","Button8")
 
 
 ;模拟创建excel文件操作
-create_excel("C:\Documents and Settings\Administrator\桌面\cc.xls")
+create_file("D:\disk_driver\xinjian","C:\Program Files (x86)\Microsoft Office\Office12\EXCEL.EXE","Microsoft Excel","Button6")
 
 ;模拟操作文件复制和剪切的过程
-move_file("C:\Documents and Settings\Administrator\桌面\a","C:\Documents and Settings\Administrator\桌面\2\a","C:\Documents and Settings\Administrator\桌面\3\a")
+move_file("D:\disk_driver","D:\aa\disk_driver","D:\bb\aa\disk_driver")
 
 
 

@@ -16,60 +16,25 @@
 ;create_word("C:\Users\guyaru.pc\Desktop\test.doc")
 
 #cs-----------------------------------------------------------------------------------------------------------------------
-;;创建word文档
+;创建文档
 parameters:
-$fileDir:  保存文件的路径
+$fileDir:  保存文件的路径         $path:调用程序路径       $title:当前程序标题       $instance：实例名称
 #ce-----------------------------------------------------------------------------------------------------------------------
-Func create_word($fileDir)
+Func create_file($fileDir,$path,$title,$instance)
 	If FileExists($fileDir) Then
 		FileDelete($fileDir )
 	EndIf
-	Local $wordProcess = _Word_Create()
-	Local $wordDoc = _Word_DocAdd($wordProcess)
-	Local $oRange = _Word_DocRangeSet($wordDoc, -1);焦点放在最近开始处
-	$oRange.Text = "这是标题. "
-	_Word_DocSaveAs($wordDoc, $fileDir);保存在桌面
-	Sleep(2000)
-	_Word_Quit($wordProcess)
-EndFunc
-;create_excel("C:\Users\guyaru.pc\Desktop\cc.xls")
-#cs-----------------------------------------------------------------------------------------------------------------------
-;创建excel文件
-parameters:
-$fileDir:  保存文件的路径
-#ce-----------------------------------------------------------------------------------------------------------------------
-Func create_excel($fileDir)
-	If FileExists($fileDir) Then
-		FileDelete($fileDir )
-	EndIf
-	Local $excelProcess = _Excel_Open()
-	Local $oExcel = _Excel_BookNew($excelProcess,1)
-	_Excel_BookSaveAs  ($oexcel,$fileDir,$xlWorkbookDefault , True)
-	_Excel_Close($excelProcess)
-EndFunc
-;create_note(@DesktopDir & "\ss.txt")
-#cs-----------------------------------------------------------------------------------------------------------------------
-;创建txt文件
-parameters:
-$fileDir:  保存文件的路径
-#ce-----------------------------------------------------------------------------------------------------------------------
-Func create_note($fileDir)
-	If FileExists($fileDir) Then
-		FileDelete($fileDir)
-	EndIf
-	Run("notepad.exe")
-	Local $hWnd = WinWaitActive("[CLASS:Notepad]","",10)
-	;ControlFocus($hWnd,"","")
-	Sleep(1000)
+	ShellExecute($path)
+	Local $nWnd = WinWaitActive($title,"",2)
 	Send("^s")
 	Sleep(1000)
-	Local $wndSaveas = WinWaitActive("另存为","",10)
-	Sleep(1000)
+	Local $wndSaveas = WinWaitActive("另存为","",1)
 	ControlSetText($wndSaveas,"","Edit1",$fileDir)
 	Sleep(1000)
-	ControlClick($wndSaveas,"","Button2")
-	WinClose($hWnd)
+	ControlClick($wndSaveas,"",$instance)
+	WinClose($nWnd)
 EndFunc
+
 #cs-----------------------------------------------------------------------------------------------------------------------
 ;创建文件夹
 parameters:
@@ -78,7 +43,7 @@ $fileDir:  保存文件的路径
 Func create_folder($fileDir)
 	DirCreate($fileDir)
 EndFunc
-;move_file("C:\Users\guyaru.pc\Desktop\test.doc","D:\test.doc","E:\test.doc")
+
 #cs-----------------------------------------------------------------------------------------------------------------------
 ;复制、剪切、删除文件和文件夹
 parameters:
@@ -102,31 +67,78 @@ Func move_file($sourceDir,$destCopyDir,$destMoveDir)
 		FileDelete($destMoveDir)
 	EndIf
 EndFunc
-;clip_board("C:\Users\guyaru.pc\Desktop\test.doc","test.doc [兼容模式] - Word","C:\Users\guyaru.pc\Desktop\test.txt","test.txt - 记事本",2)
-#cs-----------------------------------------------------------------------------------------------------------------------
-;复制、剪切、删除文件和文件夹
-parameters:
-$sourceFile:: 源文件         $sourceTitle:源文件标题     $destFile:目标文件    $destTitle:目标文件    $state:状态
-#ce-----------------------------------------------------------------------------------------------------------------------
-Func clip_board($sourceFile,$sourceTitle,$destFile,$destTitle,$state)
-	Local $sPid = ShellExecute($sourceFile)
-	WinWaitActive($sourceTitle,"",10)
-	$text = "测试内容"
-	ClipPut($text)
-	If $state ==1 Then
-		Send("^V")
-		Send("!{f4}")
-	Else
-		Local $dPid = ShellExecute($destFile)
-		WinWaitActive($destTitle,"",2)
-		Send("^V")
-		Sleep(500)
-		Send("!{f4}")
+
+
+#cs
+Func create_word($fileDir)
+	If FileExists($fileDir) Then
+		FileDelete($fileDir )
 	EndIf
-	WinClose($sPid)
-	;ConsoleWrite($sPid &@CRLF)
-	;WinClose($dPid)
+	;Local $wordProcess = _Word_Create()
+	;Local $wordDoc = _Word_DocAdd($wordProcess)
+	;Local $oRange = _Word_DocRangeSet($wordDoc, -1);焦点放在最近开始处
+	;$oRange.Text = "这是标题. "
+	;_Word_DocSaveAs($wordWnd, $fileDir);保存
+	;_Word_Quit($wordProcess)
+	ShellExecute("C:\Program Files (x86)\Microsoft Office\Office12\WINWORD.EXE")
+	Local $wordWnd = WinWaitActive("文档 1 - Microsoft Word","",2)
+	Send("^s")
+	Sleep(1000)
+	Local $wndSaveas = WinWaitActive("另存为","",1)
+	ControlSetText($wndSaveas,"","Edit1",$fileDir)
+	Sleep(1000)
+	ControlClick($wndSaveas,"","Button8")
+	WinClose($wordWnd)
 EndFunc
+
+;create_excel("C:\Users\guyaru.pc\Desktop\cc.xls")
+#cs-----------------------------------------------------------------------------------------------------------------------
+;创建excel文件
+parameters:
+$fileDir:  保存文件的路径
+#ce-----------------------------------------------------------------------------------------------------------------------
+Func create_excel($fileDir)
+	If FileExists($fileDir) Then
+		FileDelete($fileDir )
+	EndIf
+	Local $excelProcess = _Excel_Open()
+	Local $oExcel = _Excel_BookNew($excelProcess,1)
+	;_Excel_BookSaveAs  ($oexcel,$fileDir,$xlWorkbookDefault , True)
+	Sleep(1000)
+	Send("^s")
+	Sleep(1000)
+	Local $wndSaveas = WinWaitActive("另存为","",2)
+	Sleep(1000)
+	ControlSetText($wndSaveas,"","Edit1",$fileDir)
+	Sleep(1000)
+	ControlClick($wndSaveas,"","Button6")
+	;WinClose($hWnd)
+	_Excel_Close($excelProcess)
+EndFunc
+;create_note(@DesktopDir & "\ss.txt")
+#cs-----------------------------------------------------------------------------------------------------------------------
+;创建txt文件
+parameters:
+$fileDir:  保存文件的路径
+#ce-----------------------------------------------------------------------------------------------------------------------
+Func create_note($fileDir)
+	If FileExists($fileDir) Then
+		FileDelete($fileDir)
+	EndIf
+	Run("notepad.exe")
+	Local $hWnd = WinWaitActive("[CLASS:Notepad]","",10)
+	;ControlFocus($hWnd,"","")
+	Sleep(1000)
+	Send("^s")
+	Sleep(1000)
+	Local $wndSaveas = WinWaitActive("另存为","",10)
+	Sleep(1000)
+	ControlSetText($wndSaveas,"","Edit1",$fileDir)
+	Sleep(1000)
+	ControlClick($wndSaveas,"","Button1")
+	WinClose($hWnd)
+EndFunc
+#ce
 
 
 

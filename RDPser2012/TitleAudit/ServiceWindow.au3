@@ -21,13 +21,16 @@ Func service_attributes($path,$title,$count)
 	for $i =1 to $count
 		send("{APPSKEY}")
 		Sleep(500)
-		Send("{DOWN 8}")
+		For $j =1 to 8
+			Send("{DOWN}")
+			Sleep(500)
+		Next
 		Send("{ENTER}")
 		Sleep(500)
 		Send("{ESC}")
-		Sleep(500)
+		Sleep(1000)
 		Send("{DOWN}")
 		Sleep(500)
 	Next
-	WinClose($pid)
+	;WinClose($pid)
 EndFunc
