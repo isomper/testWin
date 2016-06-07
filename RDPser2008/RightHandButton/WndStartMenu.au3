@@ -10,9 +10,9 @@
 #include "E:\RDPser2008\TitleAudit\RightHandButton.au3"
 
 ;遍历一级菜单及其右键内容，和遍历二级菜单
-Local $listdown[20]=[1,1,1,1,1,2,4,7,7,4,1,1,1,1,1,4,1,1,1,1]
+Local $listdown[22]=[6,0,0,0,0,0,0,0,0,0,0,4,7,7,4,2,0,0,0,0,0,0]
 Local $subItem[1][2]
-$subItem[0][0] = "5"
-$subItem[0][1] = 11
+$subItem[0][0] = "18"
+$subItem[0][1] = 24
 click_start_all("^{esc}",1,22,$listdown)
 Send("{ESC}")

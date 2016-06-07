@@ -7,7 +7,7 @@
 修改内容：
 #ce-----------------------------------------------------------------------------------------------------------------------
 
-#include  "C:\Users\Administrator\Desktop\RDPser2008\TitleAudit\ServiceWindow.au3"
+#include  "C:\Documents and Settings\Administrator\桌面\RDP\TitleAudit\ServiceWindow.au3"
 
 ;service服务
-service_attributes("C:\WINDOWS\system32\services.msc","服务",152)
+service_attributes("C:\WINDOWS\system32\services.msc","服务",119)

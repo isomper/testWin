@@ -7,34 +7,36 @@
 修改内容：
 #ce-----------------------------------------------------------------------------------------------------------------------
 
-#include "C:\Users\Administrator\Desktop\RDPser2008\TitleAudit\RightHandButton.au3"
+#include "E:\RDPser2008\TitleAudit\RightHandButton.au3"
 
 ;计算机管理
-;打开计算机模块，遍历右键菜单（计算机管理-系统工具-事件查看器-应用程序右键菜单和二级菜单）
-Local $subItem[1][2]
-$subItem[0][0] = "3"
-$subItem[0][1] = 1
-$subItem[0][0] = "5"
-$subItem[0][1] = 1
-msc_appskey("C:\WINDOWS\system32\compmgmt.msc","计算机管理",0,3,1,5,)
-
 #cs
-;遍历计数器日志右键和二级菜单
+;打开计算机模块，遍历右键菜单（计算机管理-系统工具-任务计划程序右键菜单和二级菜单）
 Local $subItem[1][2]
-$subItem[0][0] = "3"
-$subItem[0][1] = 5
-msc_appskey("C:\WINDOWS\system32\compmgmt.msc","计算机管理",5,1,1,7)
-
-
-;遍历计算机管理（本地）右键菜单和二级菜单
-Local $subItem[1][2]
-$subItem[0][0] = "2"
+$subItem[0][0] = "7"
 $subItem[0][1] = 1
-msc_appskey("C:\WINDOWS\system32\compmgmt.msc","计算机管理",0,0,0,6)
+msc_appskey("C:\Windows\System32\compmgmt.msc","计算机管理",2,0,0,9)
 
+;遍历事件查看器右键和二级菜单
+Local $subItem[2][2]
+$subItem[0][0] = "4"
+$subItem[0][1] = 1
+$subItem[1][0] = "6"
+$subItem[1][1] = 1
+msc_appskey("C:\WINDOWS\system32\compmgmt.msc","计算机管理",3,0,0,6)
+
+
+;遍历共享文件夹右键菜单和二级菜单
+Local $subItem[2][2]
+$subItem[0][0] = "1"
+$subItem[0][1] = 1
+$subItem[1][0] = "2"
+$subItem[1][1] = 5
+msc_appskey("C:\WINDOWS\system32\compmgmt.msc","计算机管理",4,0,0,3)
+#ce
 
 ;遍历计算机管理菜单
-Local $listdown[13] = [2,8,3,6,2,4,3,3,11,3,3,3,4]
-msc_system_mgt("C:\WINDOWS\system32\compmgmt.msc","计算机管理",$listdown,6)
-#ce
+Local $listdown[5] = [4,4,2,3,5]
+msc_system_mgt("C:\WINDOWS\system32\compmgmt.msc","计算机管理",$listdown,2)
+
 

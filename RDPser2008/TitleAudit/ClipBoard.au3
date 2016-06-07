@@ -16,7 +16,7 @@
 ;clip_board("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\remoatopentxt.sikuli","a.doc - Word",3,@DesktopDir & "\新建 文本文档 (4).txt","新建 文本文档 (4).txt - 记事本",4,0)
 
 
-Func clip_board_down($scmd,$dfile,$dtitle,$pCount,$state)
+Func clip_board_down($scmd,$dfile,$dtitle,$pCount,$ser,$state)
 	If $state == 0 Then
 		open_remote($scmd)
 		Sleep(9000)
@@ -28,7 +28,7 @@ Func clip_board_down($scmd,$dfile,$dtitle,$pCount,$state)
 	ElseIf $state == 2 Then
 		open_remote($scmd)
 		Sleep(15000)
-		open_tupian($dfile,$dtitle,$pCount)
+		open_tupian($dfile,$dtitle,$pCount,$ser)
 	EndIf
 EndFunc
 
@@ -77,7 +77,7 @@ Func open_local($dfile,$dtitle,$pCount)
 	Send("{enter}")
 EndFunc
 
-Func open_tupian($dfile,$dtitle,$pCount)
+Func open_tupian($dfile,$dtitle,$pCount,$ser)
 	ShellExecute($dfile)
 	Local $spid = WinWaitActive($dtitle,"",10)
 	Send("{ENTER}")
@@ -91,7 +91,13 @@ Func open_tupian($dfile,$dtitle,$pCount)
 		Sleep(500)
 	Next
 	Send("{ENTER}")
-	Sleep(15000)
+	If $ser == 2003 Then
+		Sleep(15000)
+	ElseIf $ser == 2008 Then
+		Sleep(1000)
+	ElseIf $ser == 2012 Then
+		Sleep(1000)
+	EndIf
 	WinClose($spid)
 	Send("{TAB}")
 	Sleep(500)

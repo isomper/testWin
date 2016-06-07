@@ -1,46 +1,49 @@
 #include <Constants.au3>
 #cs----------------------------------------------------------------------------------------------------------------------
-´´½¨ÈÕÆÚ£º2016/05/25
-×÷Õß£º¹ËÑÇÈã
-¹¦ÄÜËµÃ÷£º±¾µØÎÄ¼ş£¨word¡¢excel¡¢txt£©ÓëÔ¶³ÌÎÄ¼ş£¨word¡¢excel¡¢txt£©ÎÄ¼şÖ®¼äÏà»¥¸´ÖÆ¡¢Õ³Ìù¡¢¼ôÇĞ²Ù×÷
-ĞŞ¸ÄÈÕÆÚ£º
-ĞŞ¸ÄÈË£º
-ĞŞ¸ÄÄÚÈİ£º
+åˆ›å»ºæ—¥æœŸï¼š2016/06/06
+ä½œè€…ï¼šå¼ æ³½æ–¹
+åŠŸèƒ½è¯´æ˜ï¼šæœ¬åœ°æ–‡ä»¶ï¼ˆwordã€excelã€txtï¼‰ä¸è¿œç¨‹æ–‡ä»¶ï¼ˆwordã€excelã€txtï¼‰æ–‡ä»¶ä¹‹é—´ç›¸äº’å¤åˆ¶ã€ç²˜è´´ã€å‰ªåˆ‡æ“ä½œ
+ä¿®æ”¹æ—¥æœŸï¼š
+ä¿®æ”¹äººï¼š
+ä¿®æ”¹å†…å®¹ï¼š
 #ce-----------------------------------------------------------------------------------------------------------------------
 
 #include <Constants.au3>
-#include "C:\Users\zzf\Desktop\RDP\TitleAudit\Clipboard.au3"
+#include "C:\Users\zzf\Desktop\RDPser2008\TitleAudit\Clipboard.au3"
 
-;word¸´ÖÆÕ³Ìùµ½ÎÄ±¾txt,(´Ó±¾µØµ½Ô¶³Ì·şÎñÆ÷)
-clip_board_up(@DesktopDir & "\a.docx","a.docx - Microsoft Word",1,"C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\Ptxt.sikuli",1)
+
+#cs
+;wordå¤åˆ¶åˆ°txt(ä»æœ¬åœ°åˆ°è¿œç¨‹æœåŠ¡å™¨)
+clip_board_up(@DesktopDir & "\wenjianjia\a.docx","a.docx - Microsoft Word",1,"C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\CP2008\ptxt.sikuli",1)
 Sleep(10000)
 
-;word¸´ÖÆÕ³Ìùµ½word,(´Ó±¾µØµ½Ô¶³Ì·şÎñÆ÷)
-clip_board_up(@DesktopDir & "\a.docx","a.docx - Microsoft Word",1,"C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\Pword.sikuli",1)
+;wordå¤åˆ¶åˆ°word(ä»æœ¬åœ°åˆ°è¿œç¨‹æœåŠ¡å™¨)
+clip_board_up(@DesktopDir & "\wenjianjia\a.docx","a.docx - Microsoft Word",1,"C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\CP2008\pword.sikuli",1)
 Sleep(10000)
 
-;word¸´ÖÆÕ³Ìùµ½excel,(´Ó±¾µØµ½Ô¶³Ì·şÎñÆ÷)
-clip_board_up(@DesktopDir & "\a.docx","a.docx - Microsoft Word",1,"C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\paste111.sikuli",1)
+;wordå¤åˆ¶ç²˜è´´åˆ°excel(ä»æœ¬åœ°åˆ°è¿œç¨‹æœåŠ¡å™¨)
+clip_board_up(@DesktopDir & "\wenjianjia\a.docx","a.docx - Microsoft Word",1,"C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\CP2008\pxls.sikuli",1)
 Sleep(10000)
-
-;excel¸´ÖÆÕ³Ìùµ½excel,(´Ó±¾µØµ½Ô¶³Ì·şÎñÆ÷)
-clip_board_up(@DesktopDir & "\abc.xlsx","Microsoft Excel - abc.xlsx",1,"C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\paste111.sikuli",0)
-Sleep(10000)
-
-;txt¸´ÖÆÕ³Ìùµ½txt,(´Ó±¾µØµ½Ô¶³Ì·şÎñÆ÷)
-clip_board_up(@DesktopDir & "\wenben.txt","wenben.txt - ¼ÇÊÂ±¾",3,"C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\Ptxt.sikuli",1)
-Sleep(10000)
-
-
-;txt¸´ÖÆÕ³Ìùµ½txt,(´ÓÔ¶³Ì·şÎñÆ÷µ½±¾µØ)
-clip_board_down("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\Ctxt.sikuli",@DesktopDir & "\wenben.txt","wenben.txt - ¼ÇÊÂ±¾",4,1)
-
-;word¸´ÖÆÕ³Ìùµ½word,(´ÓÔ¶³Ì·şÎñÆ÷µ½±¾µØ)
-clip_board_down("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\Cword.sikuli",@DesktopDir & "\a.docx","a.docx - Microsoft Word",2,1)
-
-;word¸´ÖÆÕ³Ìùµ½txt,(´ÓÔ¶³Ì·şÎñÆ÷µ½±¾µØ)
-clip_board_down("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\Cword.sikuli",@DesktopDir & "\wenben.txt","wenben.txt - ¼ÇÊÂ±¾",4,1)
-
-;word¸´ÖÆÍ¼Æ¬µ½word£¨´ÓÔ¶³Ìµ½±¾µØ£©
-clip_board_down("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\remotetupian.sikuli",@DesktopDir & "\tupian11.docx","tupian11.docx - Microsoft Word",2,2)
 #ce
+;excelå¤åˆ¶ç²˜è´´åˆ°excel(ä»æœ¬åœ°åˆ°è¿œç¨‹æœåŠ¡å™¨)
+clip_board_up(@DesktopDir & "\wenjianjia\abc.xlsx","Microsoft Excel - abc.xlsx",1,"C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\CP2008\pxls.sikuli",0)
+Sleep(10000)
+
+;txtå¤åˆ¶ç²˜è´´åˆ°txt(ä»æœ¬åœ°åˆ°è¿œç¨‹æœåŠ¡å™¨)
+;clip_board_up(@DesktopDir & "\wenjianjia\wenben.txt","wenben.txt - è®°äº‹æœ¬",3,"C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\CP2008\ptxt.sikuli",1)
+;Sleep(10000)
+
+#cs
+;txtå¤åˆ¶ç²˜è´´åˆ°txt(ä»è¿œç¨‹æœåŠ¡å™¨åˆ°æœ¬åœ°)
+clip_board_down("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\CP2008\ctxt.sikuli",@DesktopDir & "\wenjianjia\wenben.txt","wenben.txt - è®°äº‹æœ¬",4,1)
+
+
+;wordå¤åˆ¶ç²˜è´´åˆ°word(ä»è¿œç¨‹æœåŠ¡å™¨åˆ°æœ¬åœ°)
+clip_board_down("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\CP2008\cword.sikuli",@DesktopDir & "\wenjianjia\a.docx","a.docx - Microsoft Word",2,1)
+
+;wordå¤åˆ¶ç²˜è´´åˆ°txt(ä»è¿œç¨‹æœåŠ¡å™¨åˆ°æœ¬åœ°)
+clip_board_down("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\cp2008\cword.sikuli",@DesktopDir & "\wenjianjia\wenben.txt","wenben.txt - è®°äº‹æœ¬",4,1)
+#ce
+
+;wordå¤åˆ¶ç²˜è´´å›¾ç‰‡åˆ°word(ä»è¿œç¨‹æœåŠ¡å™¨åˆ°æœ¬åœ°)
+;clip_board_down("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\CP2008\tupian.sikuli",@DesktopDir & "\wenjianjia\tupian11.docx","tupian11.docx - Microsoft Word",2,2008,2)

@@ -7,10 +7,9 @@
 修改内容：
 #ce-----------------------------------------------------------------------------------------------------------------------
 #Include <Array.au3>
-
 Dim $dirList,$dirArry
 ;获取所有文件夹的绝对路径
-$dirList=file_list_ex("E:\2000FromNearWord")
+$dirList=file_list_ex("d:\aa")
 ;拆分绝对路径放在数组里
 $dirArry=StringSplit($dirList,"|")
 

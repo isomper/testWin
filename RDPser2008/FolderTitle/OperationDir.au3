@@ -7,11 +7,11 @@
 修改内容：
 #ce-----------------------------------------------------------------------------------------------------------------------
 #Include <Array.au3>
-#Include "E:\RDPser2008\TitleAudit\OperationDir.au3"
+#Include "C:\Documents and Settings\Administrator\桌面\RDP\TitleAudit\OperationDir.au3"
 
 ;遍历2000形近字文件夹
 Dim $dirList,$dirArry
 ;获取所有文件夹的绝对路径
-$dirList=file_list_ex("E:\2000FromNearWord")
+$dirList=file_list_ex("C:\Documents and Settings\Administrator\桌面\2000FromNearWord")
 ;拆分绝对路径放在数组里
 $dirArry=StringSplit($dirList,"|")

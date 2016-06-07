@@ -9,7 +9,7 @@
 #cs-----------------------------------------------------------------------------------------------------------------------
 ;.MSC方式打开模块，遍历右键菜单
 parameters:
-$path:  执行文件的路径               $title：窗口的标题           $nTab:按下tab键的次数            $nDown：按下down键的次数
+$path:  执行文件的路径               $title：窗口的标题                      $nDown：按下down键的次数
 $nRight：按下right键的次数           $n2ndDown: 按下二级菜单down的个数        $nAppDown：appskey右键菜单功能键个数
 #ce-----------------------------------------------------------------------------------------------------------------------
 Func msc_appskey($path,$title,$nDown,$nRight,$n2ndDown,$nAppDown)
@@ -36,7 +36,7 @@ Func msc_appskey($path,$title,$nDown,$nRight,$n2ndDown,$nAppDown)
 	Next
 	Send("{esc}")
 	Sleep(500)
-	WinClose($nWnd)
+	;WinClose($nWnd)
 EndFunc
 ;遍历计算机管理
 
@@ -46,8 +46,8 @@ Func msc_system_mgt($path,$title,$nDown,$index)
 	For $i =0 to UBound($nDown)-1
 		For $j=0 to $nDown[$i]-1
 			Send("{DOWN}")
-			If  $i== 6 Then
-				Send("{left 4}")
+			If  $i== 2 Then
+				Send("{left 3}")
 			EndIf
 			Sleep(500)
 		Next
@@ -79,6 +79,7 @@ $key:  呼起应用的快捷键                                     $nTab：按�
 $nUp： 按下up键的次数                                       $nDown：按下down键的次数
 #ce-----------------------------------------------------------------------------------------------------------------------
 ;遍历菜单子菜单及其右键内容
+#cs
 Func click_start_all($key,$nTab,$nUp,$nDown)
 	Send($key)
 	Sleep(500)
@@ -87,6 +88,32 @@ Func click_start_all($key,$nTab,$nUp,$nDown)
 	;Sleep(500)
 	For $i = 1 To $nUp
 		Send("{UP}")
+		find_children($subItem, String($i))
+		;second_level($arr,$nUp,$nArrowDown,$index)
+		Sleep(500)
+		Send("{APPSKEY}")
+		Sleep(500)
+		For $j =1 To $nDown[$i-1]
+			Send("{DOWN}")
+			Sleep(500)
+		Next
+		Send("{ESC}")
+	Next
+	Sleep(200)
+EndFunc
+#ce
+
+Func click_start_all($key,$nTab,$nUp,$nDown)
+	Send($key)
+	Sleep(500)
+	;Send("{RIGHT}")
+	;Send("{TAB "& $nTab &"}")
+	;Sleep(500)
+	For $i = 1 To $nUp
+		Send("{DOWN}")
+		If $i== 12 Then
+			Send("{TAB}")
+		EndIf
 		find_children($subItem, String($i))
 		;second_level($arr,$nUp,$nArrowDown,$index)
 		Sleep(500)
@@ -119,4 +146,5 @@ Func find_children($subList, $indexStr)
 		EndIf
 	Next
 EndFunc
+
 
