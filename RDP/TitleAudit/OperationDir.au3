@@ -7,20 +7,6 @@
 修改内容：
 #ce-----------------------------------------------------------------------------------------------------------------------
 #Include <Array.au3>
-Dim $dirList,$dirArry
-;获取所有文件夹的绝对路径
-$dirList=file_list_ex("d:\aa")
-;拆分绝对路径放在数组里
-$dirArry=StringSplit($dirList,"|")
-
-for $i=1 to $dirArry[0]
-	;打开文件夹
-	ShellExecute($dirArry[$i])
-	Sleep(1000)
-	;关闭文件夹
-	Send("!{f4}")
-Next
-
 
 ;获取所有文件夹的绝对路径
 Func file_list_ex($sDir)

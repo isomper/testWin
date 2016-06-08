@@ -25,6 +25,7 @@ create_word("C:\Documents and Settings\Administrator\桌面\test.docx")
 ;模拟创建excel文件操作
 create_excel("C:\Documents and Settings\Administrator\桌面\cc.xls")
 
+
 ;模拟操作文件复制和剪切的过程
 move_file("C:\Documents and Settings\Administrator\桌面\a","C:\Documents and Settings\Administrator\桌面\2\a","C:\Documents and Settings\Administrator\桌面\3\a")
 

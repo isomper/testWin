@@ -1,0 +1,8 @@
+测试机器
+IP:192.168.23.159
+用户名：Administrator
+密码:Admin123
+
+前提条件：
+存在以下路径 :
+C:\Documents and Settings\Administrator\桌面\RDP\WindowTitle

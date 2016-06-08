@@ -15,3 +15,11 @@ Dim $dirList,$dirArry
 $dirList=file_list_ex("C:\Documents and Settings\Administrator\桌面\2000FromNearWord")
 ;拆分绝对路径放在数组里
 $dirArry=StringSplit($dirList,"|")
+
+for $i=1 To UBound($dirArry);$dirArry[0]
+	;打开文件夹
+	ShellExecute($dirArry[$i])
+	Sleep(1000)
+	;关闭文件夹
+	Send("!{f4}")
+Next
