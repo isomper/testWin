@@ -36,7 +36,7 @@ Func msc_appskey($path,$title,$nDown,$nRight,$n2ndDown,$nAppDown)
 	Next
 	Send("{esc}")
 	Sleep(500)
-	;WinClose($nWnd)
+	WinClose($nWnd)
 EndFunc
 ;遍历计算机管理
 
@@ -47,7 +47,7 @@ Func msc_system_mgt($path,$title,$nDown,$index)
 		For $j=0 to $nDown[$i]-1
 			Send("{DOWN}")
 			If  $i== 2 Then
-				Send("{left 3}")
+				Send("{left 4}")
 			EndIf
 			Sleep(500)
 		Next

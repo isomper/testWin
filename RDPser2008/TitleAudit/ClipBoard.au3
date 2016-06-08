@@ -19,11 +19,11 @@
 Func clip_board_down($scmd,$dfile,$dtitle,$pCount,$ser,$state)
 	If $state == 0 Then
 		open_remote($scmd)
-		Sleep(9000)
+		Sleep(11000)
 		open_excel($dfile,$dtitle,$pCount)
 	ElseIf $state == 1 Then
 		open_remote($scmd)
-		Sleep(9000)
+		Sleep(11000)
 		open_local($dfile,$dtitle,$pCount)
 	ElseIf $state == 2 Then
 		open_remote($scmd)
@@ -64,11 +64,12 @@ Func open_local($dfile,$dtitle,$pCount)
 	Send("+{right 40}")
 	Sleep(500)
 	Send("{APPSKEY}")
-	Sleep(500)
+	Sleep(1000)
 	For $i = 0 To $pCount-1
 		Send("{DOWN}")
 		Sleep(500)
 	Next
+	Sleep(2000)
 	Send("{ENTER}")
 	Sleep(500)
 	WinClose($spid)

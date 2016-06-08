@@ -31,7 +31,11 @@ Func create_file($fileDir,$path,$title,$instance)
 	Local $wndSaveas = WinWaitActive("另存为","",1)
 	ControlSetText($wndSaveas,"","Edit1",$fileDir)
 	Sleep(1000)
-	ControlClick($wndSaveas,"",$instance)
+	;ControlClick($wndSaveas,"",$instance)
+	Opt("MouseCoordMode", 2) ;设置鼠标函数的坐标参照,相对当前激活窗口客户区坐标 Opt("MouseCoordMode", 1) ;1=absolute, 0=relative, 2=client
+	$a=ControlGetPos($wndSaveas,"",$instance)   ;获取指定控件相对其窗口的坐标位置和大小
+	MouseClick("left",$a[0],$a[1])
+	Sleep(500)
 	WinClose($nWnd)
 EndFunc
 

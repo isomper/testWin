@@ -20,5 +20,5 @@ $subItem[1][0] = "2"
 $subItem[1][1] = 4
 $subItem[2][0] = "8"
 $subItem[2][1] = 12
-mouse_right("right",250,500,1,10)
+mouse_right("right",500,100,1,10)
 Send("{ESC}")

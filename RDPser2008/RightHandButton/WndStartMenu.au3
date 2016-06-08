@@ -13,6 +13,6 @@
 Local $listdown[22]=[6,0,0,0,0,0,0,0,0,0,0,4,7,7,4,2,0,0,0,0,0,0]
 Local $subItem[1][2]
 $subItem[0][0] = "18"
-$subItem[0][1] = 24
+$subItem[0][1] = 25
 click_start_all("^{esc}",1,22,$listdown)
 Send("{ESC}")

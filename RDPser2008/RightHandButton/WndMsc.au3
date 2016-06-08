@@ -10,7 +10,7 @@
 #include "E:\RDPser2008\TitleAudit\RightHandButton.au3"
 
 ;计算机管理
-#cs
+
 ;打开计算机模块，遍历右键菜单（计算机管理-系统工具-任务计划程序右键菜单和二级菜单）
 Local $subItem[1][2]
 $subItem[0][0] = "7"
@@ -33,10 +33,10 @@ $subItem[0][1] = 1
 $subItem[1][0] = "2"
 $subItem[1][1] = 5
 msc_appskey("C:\WINDOWS\system32\compmgmt.msc","计算机管理",4,0,0,3)
-#ce
+
 
 ;遍历计算机管理菜单
-Local $listdown[5] = [4,4,2,3,5]
+Local $listdown[7] = [4,4,2,3,5,5,2]
 msc_system_mgt("C:\WINDOWS\system32\compmgmt.msc","计算机管理",$listdown,2)
 
 

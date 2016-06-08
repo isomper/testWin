@@ -26,7 +26,7 @@ create_file("D:\disk_driver\xinjian.docx","C:\Program Files (x86)\Microsoft Offi
 
 
 ;模拟创建excel文件操作
-create_file("D:\disk_driver\xinjian","C:\Program Files (x86)\Microsoft Office\Office12\EXCEL.EXE","Microsoft Excel","Button6")
+create_file("D:\disk_driver\xinjian.xlsx","C:\Program Files (x86)\Microsoft Office\Office12\EXCEL.EXE","Microsoft Excel","Button6")
 
 ;模拟操作文件复制和剪切的过程
 move_file("D:\disk_driver","D:\aa\disk_driver","D:\bb\aa\disk_driver")
