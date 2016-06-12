@@ -15,10 +15,10 @@
 ;模拟点击鼠标右键
 Local $subItem[3][3]
 $subItem[0][0] = "1"
-$subItem[0][1] = 5
+$subItem[0][1] = 6
 $subItem[1][0] = "2"
-$subItem[1][1] = 4
+$subItem[1][1] = 5
 $subItem[2][0] = "8"
-$subItem[2][1] = 12
+$subItem[2][1] = 13
 mouse_right("right",500,100,1,10)
 Send("{ESC}")
