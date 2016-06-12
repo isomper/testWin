@@ -9,6 +9,7 @@
 
 #include "C:\Documents and Settings\Administrator\桌面\RDP\TitleAudit\RightHandButton.au3"
 ;计算机管理
+
 ;打开计算机模块，遍历右键菜单（计算机管理-系统工具-事件查看器-应用程序右键菜单和二级菜单）
 Local $subItem[1][2]
 $subItem[0][0] = "5"
@@ -31,6 +32,6 @@ msc_appskey("C:\WINDOWS\system32\compmgmt.msc","计算机管理",0,0,0,6)
 
 
 ;遍历计算机管理菜单
-Local $listdown[13] = [2,8,3,6,2,4,3,3,11,3,3,3,4]
+Local $listdown[13] = [2,8,3,6,2,3,3,3,11,3,3,3,4]
 msc_system_mgt("C:\WINDOWS\system32\compmgmt.msc","计算机管理",$listdown,6)
 

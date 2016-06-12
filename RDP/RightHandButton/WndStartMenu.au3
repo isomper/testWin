@@ -10,18 +10,18 @@
 #include "C:\Documents and Settings\Administrator\桌面\RDP\TitleAudit\RightHandButton.au3"
 
 ;遍历一级菜单及其右键内容，和遍历二级菜单
-Local $listdown[20]=[1,1,1,1,1,1,2,2,2,2,9,10,13,1,1,1,1,12,12,1]
+Local $listdown[20]=[1,1,1,1,1,1,2,2,2,2,9,12,12,0,0,0,0,0,0,0]
 Local $subItem[8][2]
 $subItem[0][0] = "8"
-$subItem[0][1] = 1
+$subItem[0][1] = 2
 $subItem[1][0] = "9"
 $subItem[1][1] = 21
 $subItem[2][0] = "10"
 $subItem[2][1] = 31
 $subItem[3][0] = "108"
-$subItem[3][1] = 1
+$subItem[3][1] = 2
 $subItem[4][0] = "1012"
-$subItem[4][1] = 21
+$subItem[4][1] = 0
 $subItem[5][0] = "1015"
 $subItem[5][1] = 1
 $subItem[6][0] = "1018"
