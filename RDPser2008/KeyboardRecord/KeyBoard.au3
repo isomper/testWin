@@ -9,7 +9,7 @@
 
 ;打开桌面上的1.txt文件
 ShellExecute(@DesktopDir & "\1.txt")
-WinWaitActive("1.txt - 记事本","",2)
+Local $pid = WinWaitActive("1.txt - 记事本","",2)
 ;设定capslock带入记事本
 Opt("SendCapslockMode",0)
 
@@ -28,9 +28,9 @@ Local $key_with_win[3] = ["d","e","r"]
 ;定义数据源定义0~9数字
 Local $key_num[10] = [0,1,2,3,4,5,6,7,8,9]
 ;定义ctrl+(a,x,c,v,s)快捷键
-Local $key_with_ctrl[5] = ["a","x","v","c","s"]
+Local $key_with_ctrl[5] = ["a","x","v","c"]
 ;定义ctrl+(f,o,g,h,p,n)快捷键
-Local $key_with_ctrl_sysbol[6] = ["f","o","g","h","p","n"]
+Local $key_with_ctrl_sysbol[5] = ["f","o","g","h","p"]
 ;定义F系列功能键
 Local $key_fn[12] = ["F2","F4","F5","F6","F7","F8","F9","F10","F11","F12"]
 ;定义`[]\;',./~{}|:<>?"符号以及空格和回车
@@ -63,12 +63,16 @@ key_singal($key_fn,"",0)
 ;模拟alt+tab快捷键
 key_singal($key_with_alt,"!",0)
 ;模拟win+(r,d,e)快捷键
-key_singal($key_with_win,"#",0)
+win_key($key_with_win)
 ;模拟F1键
 key_with_sysbol($key_f1,"F1")
 ;模拟F3键
 key_with_sysbol($key_f1,"F3")
-
+WinClose($pid)
+Sleep(500)
+Send("{TAb}")
+Sleep(500)
+Send("{ENTER}")
 #cs------------------------------------------------------------------------------------------------------------------------------
 定义函数
 #ce------------------------------------------------------------------------------------------------------------------------------
@@ -90,6 +94,24 @@ func key_with_sysbol($key,$state)
 		EndIf
 		Sleep(1000)
 		Send("{ESC}")
+	Next
+EndFunc
+
+;处理win+key
+Func win_key($key)
+	for $i in $key
+		Sleep(1000)
+		If $i == "d" Then
+			Send("#d")
+		ElseIf $i == "e" Then
+			Send("#e")
+			Sleep(1000)
+			Send("!{f4}")
+		ElseIf  $i == "r" Then
+			Send("#r")
+			Sleep(1000)
+			Send("{ESC}")
+		EndIf
 	Next
 EndFunc
 
