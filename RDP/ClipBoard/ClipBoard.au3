@@ -15,8 +15,11 @@
 clip_board_up(@DesktopDir & "\wenjianjia\a.docx","a.docx - Microsoft Word",1,"C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\CP2003\Ptxt.sikuli",1)
 Sleep(10000)
 
+;word复制粘贴到txt(从远程服务器到本地)
+clip_board_down("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\CP2003\Cword.sikuli",@DesktopDir & "\wenjianjia\wenben.txt","wenben.txt - 记事本",4,1)
+
 ;word复制到word(从本地到远程服务器)
-clip_board_up(@DesktopDir & "\wenjianjia\a.docx","a.docx - Microsoft Word",1,"C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\CP2003\Pword.sikuli",1)
+clip_board_up(@DesktopDir & "\wenjianjia\a.docx","a.docx - Microsoft Word",2,"C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\CP2003\Pword.sikuli",1)
 Sleep(10000)
 
 ;word复制粘贴到excel(从本地到远程服务器)
@@ -31,16 +34,11 @@ Sleep(10000)
 clip_board_up(@DesktopDir & "\wenjianjia\wenben.txt","wenben.txt - 记事本",3,"C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\CP2003\Ptxt.sikuli",1)
 Sleep(10000)
 
-
 ;txt复制粘贴到txt(从远程服务器到本地)
 clip_board_down("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\CP2003\Ctxt.sikuli",@DesktopDir & "\wenjianjia\wenben.txt","wenben.txt - 记事本",4,1)
 
 ;word复制粘贴到word(从远程服务器到本地)
-clip_board_down("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\CP2003\Cword.sikuli",@DesktopDir & "\wenjianjia\a.docx","a.docx - Microsoft Word",2,1)
-
-;word复制粘贴到txt(从远程服务器到本地)
-clip_board_down("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\CP2003\Cword.sikuli",@DesktopDir & "\wenjianjia\wenben.txt","wenben.txt - 记事本",4,1)
+clip_board_down("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\CP2003\Cword.sikuli",@DesktopDir & "\wenjianjia\a.docx","a.docx - Microsoft Word",3,1)
 
 ;word复制粘贴图片到word(从远程服务器到本地)
 clip_board_down("C:\Users\zzf\Desktop\runsikulix -r C:\Users\zzf\Desktop\CP2003\remotetupian.sikuli",@DesktopDir & "\wenjianjia\tupian11.docx","tupian11.docx - Microsoft Word",2,2)
-#ce
