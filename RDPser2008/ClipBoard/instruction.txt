@@ -1,0 +1,12 @@
+测试机器
+IP:192.168.23.127
+用户名：Administrator
+密码:Admin12345
+
+前提条件：
+存在以下路径 :
+本地文件：\wenjianjia\a.docx,abc.xlsx,wenben.txt
+远程服务器需用的文件：C:\Users\zzf\Desktop\CP2003\Ctxt.sikuli,Cword.sikuli,remotetupian.sikuli
+0:代表excel
+1：代表txt,word
+2:代表图片

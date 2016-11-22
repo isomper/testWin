@@ -30,7 +30,7 @@ Local $key_num[10] = [0,1,2,3,4,5,6,7,8,9]
 ;定义ctrl+(a,x,c,v,s)快捷键
 Local $key_with_ctrl[5] = ["a","x","v","c"]
 ;定义ctrl+(f,o,g,h,p,n)快捷键
-Local $key_with_ctrl_sysbol[6] = ["f","o","g","h","p"]
+Local $key_with_ctrl_sysbol[5] = ["f","o","g","h","p"]
 ;定义F系列功能键
 Local $key_fn[12] = ["F2","F4","F5","F6","F7","F8","F9","F10","F11","F12"]
 ;定义`[]\;',./~{}|:<>?"符号以及空格和回车
@@ -60,11 +60,6 @@ key_singal($key_with_ctrl,"^",0)
 key_with_sysbol($key_with_ctrl_sysbol,"^")
 ;输入F系列快捷键
 key_singal($key_fn,"",0)
-WinClose($pid)
-Send("{TAB}")
-Sleep(500)
-Send("{ENTER}")
-Sleep(500)
 ;模拟alt+tab快捷键
 key_singal($key_with_alt,"!",0)
 ;模拟win+(r,d,e)快捷键
@@ -73,7 +68,11 @@ win_key($key_with_win)
 key_with_sysbol($key_f1,"F1")
 ;模拟F3键
 key_with_sysbol($key_f1,"F3")
-
+WinClose($pid)
+Sleep(500)
+Send("{TAb}")
+Sleep(500)
+Send("{ENTER}")
 #cs------------------------------------------------------------------------------------------------------------------------------
 定义函数
 #ce------------------------------------------------------------------------------------------------------------------------------
@@ -97,7 +96,6 @@ func key_with_sysbol($key,$state)
 		Send("{ESC}")
 	Next
 EndFunc
-
 
 ;处理win+key
 Func win_key($key)

@@ -60,11 +60,6 @@ key_singal($key_with_ctrl,"^",0)
 key_with_sysbol($key_with_ctrl_sysbol,"^")
 ;输入F系列快捷键
 key_singal($key_fn,"",0)
-WinClose($pid)
-Send("{TAB}")
-Sleep(500)
-Send("{ENTER}")
-Sleep(500)
 ;模拟alt+tab快捷键
 key_singal($key_with_alt,"!",0)
 ;模拟win+(r,d,e)快捷键
@@ -72,8 +67,12 @@ win_key($key_with_win)
 ;模拟F1键
 key_with_sysbol($key_f1,"F1")
 ;模拟F3键
-key_with_sysbol($key_f1,"F3")
-
+key_with_sysbol($key_f3,"F3")
+WinClose($pid)
+Send("{TAB}")
+Sleep(500)
+Send("{ENTER}")
+Sleep(500)
 #cs------------------------------------------------------------------------------------------------------------------------------
 定义函数
 #ce------------------------------------------------------------------------------------------------------------------------------
@@ -97,8 +96,6 @@ func key_with_sysbol($key,$state)
 		Send("{ESC}")
 	Next
 EndFunc
-
-
 ;处理win+key
 Func win_key($key)
 	for $i in $key
@@ -116,7 +113,6 @@ Func win_key($key)
 		EndIf
 	Next
 EndFunc
-
 ;处理没有弹出框的键盘模拟
 Func key_singal($key,$state,$capslock)
 	for $i in $key
