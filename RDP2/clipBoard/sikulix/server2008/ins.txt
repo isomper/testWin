@@ -1,0 +1,6 @@
+服务器IP:172.16.10.122
+用户名：Administrator
+密码：123.com
+桌面上存在au3 exe:
+Paste.exe
+CopyRemote.exe

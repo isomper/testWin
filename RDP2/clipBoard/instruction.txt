@@ -1,0 +1,70 @@
+说明：
+sikuli安装路径：D:\sikulix
+
+磁盘外部（上行）本地需要文件：
+文件路径：D:\au3
+文件名称：cs.txt , Cword.docx , Cexcel.xlsx
+测试操作系统版本为server2003：
+sikuli录制文件路径: D:\au3\sever2003Paste.sikuli  和  sever2003Copy.sikuli 
+测试操作系统版本为server2008：
+sikuli录制文件路径: D:\au3\sever2008Paste.sikuli  和  sever2008Copy.sikuli 
+测试操作系统版本为server2012：
+sikuli录制文件路径: D:\au3\sever2012Paste.sikuli  和  sever2012Copy.sikuli 
+本地D盘新建：d:\au3\tmp.txt
+远程服务器需要文件：C:\au3\test.txt  C:\au3\test.docx ,  C:\au3\test.xlsx
+远程服务器需要exe:   C:\Documents and Settings\Administrator\桌面\Copy.exe 和 Paste.exe
+
+
+磁盘外部（下行）本地需要文件：
+文件路径：D:\au3
+文件名称：cs.txt , Cword.docx , Cexcel.xlsx
+sikuli录制文件路径: D:\au3\sever2003Paste.sikuli  和  sever2003Copy.sikuli 
+测试操作系统版本为server2008：
+sikuli录制文件路径: D:\au3\sever2008Paste.sikuli  和  sever2008Copy.sikuli 
+测试操作系统版本为server2012：
+sikuli录制文件路径: D:\au3\sever2012Paste.sikuli  和  sever2012Copy.sikuli 
+本地D盘新建：d:\au3\tmp.txt
+本地D盘新建：d:\au3\tmp.txt
+远程服务器需要文件：C:\au3\test.txt  C:\au3\test.docx ,  C:\au3\test.xlsx
+远程服务器需要exe:   C:\Documents and Settings\Administrator\桌面\Copy.exe 和 Paste.exe
+
+
+磁盘内部（上行）本地需要文件：
+文件路径：\\tsclient\D\au3
+文件名称：cs.txt , Cword.docx , Cexcel.xlsx
+远程服务器需要文件：C:\au3\disk.txt  C:\au3\disk.docx ,  C:\au3\disk.xlsx
+
+
+磁盘内部（下行）本地需要文件：
+文件路径：\\tsclient\D\au3
+文件名称：cs.txt , Cword.docx , Cexcel.xlsx
+远程服务器需要文件：C:\au3\disk.txt  C:\au3\disk.docx ,  C:\au3\disk.xlsx
+
+clipBoard目录说明：
+包含Disk 、outside 、testData、sikulix四个目录
+磁盘内部Disk目录 ：            disk_clipboard.au3 函数文件  disk_down.au3下行业务数据   disk_up.au3上行业务数据
+磁盘外部outside目录：        remoteCopy1103.sikuli  远程服务器复制、剪切sikuli文件
+		           remotePaste1734.sikuli 远程服务器粘贴sikuli文件
+		           outside_clipboard	函数文件
+		           remoteOpCopy_last.au3 远程复制、剪切文件
+		           remoteOpPaste_last.au3 远程粘贴文件
+		           out_down.au3下行业务数据   
+		           out_up.au3上行业务数据	
+测试数据文件testData目录：
+包含local 和remote两个目录
+local 本地数据存放目录：     cs.txt ,  磁盘内部和外部上行测试数据txt文件
+		           Cword.docx , 磁盘内部和外部上行测试数据word文件
+		           Cexcel.xlsx，磁盘内部和外部上行测试数据excel文件
+remote远程数据存放目录：
+   		           disk.docx  磁盘内部下行测试数据word文件
+		           disk.txt     磁盘内部下行测试数据txt文件
+		           disk.xlsx   磁盘内部下行测试数据excel文件
+		           test.docx  磁盘外部下行测试数据word文件
+		           test.txt      磁盘外部下行测试数据txt文件
+		           test.xlsx    磁盘外部下行测试数据excel文件
+
+sikulix存放sikulix录制的文件：  server2003文件		测试server2003系统调用的sukuix文件
+				server2008文件		测试server2008系统调用的sukuix文件
+				server2012文件		测试server2012系统调用的sukuix文件
+
+

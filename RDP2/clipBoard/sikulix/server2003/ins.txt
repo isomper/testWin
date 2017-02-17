@@ -1,0 +1,6 @@
+服务器IP:172.16.10.241
+用户名：Administrator
+密码：root.123
+桌面上存在 au3 exe
+Copy.exe
+Paste.exe
