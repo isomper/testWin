@@ -10,12 +10,10 @@ Sleep(1000)
 Send("^N")
 Sleep(1000)
 Send("!S")
-;WinMenuSelectItem("无标题 - 记事本", "" ,"&文件")
+Send("test")
+Send("{ENTER}")
+Send("{TAB 4}")
+Send("{ENTER}")
 
-;WinClose("无标题 - 记事本")
-;WinWaitActive("记事本","保存")
-;Send("!S")
-
-
-Sleep(5000)
+Sleep(2000)
 ProcessClose($iPID)
